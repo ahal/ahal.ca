@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block title %}Aboot{% endblock title %}
+{% block metadata %}
+<link href='/static/css/home.css' rel='stylesheet' type='text/css'/>
+{% endblock metadata %}
+
+{% block content %}
+    <div id="welcome">
+        <div>
+            <img src="/static/img/about.jpg" id="welcome-image"/>
+        </div>
+        <div id="welcome-text">
+            <h2 class="title">Life and Times</h2>
+            <p>
+            My name is Andrew Halberstadt, I'm a 20-something guy from Ontario who works at Mozilla in Toronto. I graduated from the 
+            <a href="http://www.uwaterloo.ca">University of Waterloo</a> for Software Engineering. I've been described as stereotypically 
+            Canadian and am a man of many trades but master of none.
+            </p>
+
+            <p>
+            I enjoy hacking around in Python and Javascript and I have several <a href="http://github.com/ahal">projects on the go</a>.
+            Sometimes I don't really know <a href="/blog/2011/i-tried-be-different/">why</a> I do them. I suspect I'm a bit of a masochist.
+            </p>
+
+            <p>
+            Outside of coding I like sports, hockey (duh) and soccer being my favourites. I really enjoy
+            <a href="http://www.goodreads.com/user/show/7206558">reading a good book</a>, <a href="http://last.fm/user/ahal89">listening to music</a> 
+            and I can (sort of) play guitar and piano. I also dabble with scuba diving, and somewhat more than dabble with beer.
+            </p>
+        </div>
+    </div>
+{% endblock content %}

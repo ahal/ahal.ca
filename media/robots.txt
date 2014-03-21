@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /static/img/gallery/
+Disallow: /static/files/
+Disallow: /static/private/

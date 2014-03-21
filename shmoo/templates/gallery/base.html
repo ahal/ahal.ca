@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block title %}Gallery{% endblock title %}
+{% block metadata %}
+<link href='/static/css/gallery.css' rel='stylesheet' type='text/css'/>
+{% endblock metadata %}
+
+{% block content %}
+    <div class='container'>
+        {% autoescape off %}
+        {{ sets }}
+        {% endautoescape %}
+    </div>
+{% endblock content %}

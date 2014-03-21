@@ -1,0 +1,94 @@
+.main {
+    min-width: 1190px;
+}
+
+.container .d1 {
+    width: 1180px;
+}
+
+.container .col {
+    float: left;
+    padding: 0;
+    margin: 0px 10px 20px;
+}
+
+#sets .set-header {
+    padding: 12px 15px;
+    margin: 0;
+}
+
+#sets .set-header h2 {
+    float: left;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0;
+    border-bottom: none;
+}
+
+#sets .set-header p {
+    font-size: 11px;
+    line-height: 20px;
+    float: right;
+}
+
+#sets .set-header p a {
+    font-weight: bold;
+}
+
+#sets .set-big .hero {
+    float: left;
+    width: 280px;
+    height: 280px;
+    padding: 11px 6px 0px 12px;
+    margin: 0;
+}
+
+#sets .set-big .set-content {
+    float: left;
+    width: 880px;
+    padding: 11px 0px 5px;
+    margin: 0;
+}
+
+#sets .set-big .set-content .item {
+    width: 140px;
+    height: 137px;
+    float: left;
+    padding: 0px;
+    margin: 0px 6px 6px 0px;
+}
+
+#sets .item {
+    overflow: hidden !important;
+}
+
+#sets .link-tile {
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+    border-bottom: none;
+}
+
+#sets .ling-tile a {
+    underline: none;
+}
+
+#sets .link-tile strong {
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 50px 0px 0px;
+}
+
+#sets .clear {
+    float: none;
+    clear: both;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+}

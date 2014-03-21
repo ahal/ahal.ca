@@ -1,0 +1,13 @@
+/** Syeles for the contact page **/
+h2 {
+    margin-bottom: 40px;
+}
+
+textarea {
+    max-width: 40%;
+}
+
+#contact-image {
+    float:right;
+    max-width:55%;
+}

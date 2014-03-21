@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block title %}Projects{% endblock title %}
+{% block metadata %}
+<link href='/static/css/projects.css' rel='stylesheet' type='text/css'/>
+{% endblock metadata %}
+
+{% block content %}
+<h2>Mozmill</h2>
+<p>
+<a href="https://developer.mozilla.org/en/Mozmill">Mozmill</a> is a test automation tool for Gecko based applications. 
+While its primary use is automating Firefox and Thunderbird tests, it can also be used to test extensions or as a general purpose driver.
+Like most Mozilla projects, Mozmill is <a href="http://github.com/mozautomation/mozmill">open source</a>.
+</p>
+
+<h2>Taedium</h2>
+<p>
+<a href="http://taedium.me">Taedium</a> is a school project which aims to solve the common cycle of boredom ("I don't know, what do you want to do?").
+Taedium will provide a stumbleupon like interface for discovering new activities nearby based on your likes and disklikes.
+</p>
+
+<h2>Firebug Test Runner</h2>
+<p>
+The <a href="http://github.com/ahal/Firebug-Test-Runner">Firebug Test Runner</a> is a tool I made for automating the process of running the Firebug
+unit tests.  It is currently deployed on three virtual machines inside Mozilla's network and is reporting <a href="http://www.getfirebug.com/testresults">results</a> 
+to Firebug's website.
+</p>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title %}Contact{% endblock title %}
+{% block metadata %}
+<link href='/static/css/contact.css' rel='stylesheet' type='text/css'/>
+{% endblock metadata %}
+
+{% block content %}
+    <h2>Drop me a Line</h2>
+    <img src="/static/img/contact.png" id="contact-image"/>
+    <form action="/contact/" method="POST" name="email-form">{% csrf_token %}
+        {{ form.non_field_errors }} 
+        {{ form.email.errors }}
+        <p><label for="id_email">Email:</label></p>
+        {{ form.email }}
+        {{ form.message.errors }}
+        <p><label for="id_message">Message:</label></p>
+        {{ form.message }}
+        <br><input type="submit" value="Send"/>
+        {% if processed %} Email sent!{% endif %}
+        {% if invalid %} Invalid form, hit back and try again.{% endif %}
+    </form>
+{% endblock content %}

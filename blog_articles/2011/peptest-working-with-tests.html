@@ -1,0 +1,49 @@
+<p>
+<a href="https://wiki.mozilla.org/Auto-tools/Projects/peptest">Peptest</a> is an automated test harness for measuring responsiveness (or lack thereof) in Firefox (see my 
+<a href="http://ahal.ca/blog/2011/peptest-introduction/">older post</a>).
+</p>
+
+<p>
+Recently, peptest landed in Mozilla Central along with a make target. This means that you can run the tests with:
+<pre>
+cd <i>path/to/objdir</i>
+make peptest
+</pre>
+
+There's some more <a href="https://developer.mozilla.org/en/Peptest#Running_Tests">in depth documentation</a> on MDN.
+</p>
+
+<h2>Adding Tests</h2>
+<p>
+Being able to run the tests is great and all, the only problem is that there aren't any tests yet (aside from a handful of example tests)! 
+Tests need to be added by developers and should correspond to a bug. I'll be making another post about best practices in a bit, but for now you can check out the 
+<a href="https://wiki.mozilla.org/Auto-tools/Projects/peptest#Test_Format">test format</a> to get started.
+</p>
+
+<p>
+Once you have your test finished, tested and reviewed you can add it to the default list of tests. Tests currently live in 
+<a href="http://mxr.mozilla.org/mozilla-central/source/testing/peptest/tests/firefox/">testing/peptest</a>. For example, say I had a couple tests that tested 
+the responsiveness of Firefox's tabs. I might: <br>
+<ol>
+    <li>Create a new directory called <i>testing/peptest/tests/firefox/tabbrowsing</i></li>
+    <li>Place the tests into this directory</li>
+    <li>Create a manifest called <i>tabbrowsing.ini</i> and populate it with my tests eg: <br>
+<pre>
+[tabbrowsing_open.js]
+[tabbrowsing_close.js]
+[tabbrowsing_switch.js]
+</pre>
+    </li>
+    <li>Add this manifest to the <i>firefox_all.ini</i> manifest: <br>
+<pre>
+[include:tabbrowsing/tabbrowsing.ini]
+</pre>
+    </li>
+</ol>
+
+Any tests that are included in the <i>firefox_all.ini</i> manifest will be run when <i>make peptest</i> is run.
+</p>
+
+<p>
+Feel free to ping me (ahal) on irc if you have any questions or need help writing tests.
+</p>

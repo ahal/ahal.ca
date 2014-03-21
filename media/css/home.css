@@ -1,0 +1,16 @@
+/*** Styles related to the home page ***/
+
+#welcome {
+}
+
+#welcome-image {
+    float: right;
+    padding: 10px 10px 10px 10px;
+    margin: 30px 5px 0 50px;
+    border: 1px solid #cecece;
+    max-width: 45%;
+}
+
+#welcome-text {
+    overflow: auto;
+}

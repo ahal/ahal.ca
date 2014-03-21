@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link href='/static/css/navigation.css' rel='stylesheet' type='text/css'/>
+    <link href='/static/css/global.css' rel='stylesheet' type='text/css'/>
+
+    <title>{% block title %}Main Page{% endblock %}</title>
+    {% block metadata %}{% endblock %}
+</head>
+
+<body>
+<div class='wrap'>
+    <div class='header'>
+        <div id='list-container'>
+            <div id='anchor-bottom'>
+            <ul id='navigation-bar'>
+                <li><a href='/' {% if page_name == "blog" %}class='selected'{% endif %}>Blog</a></li>
+                <li><a href='/projects' {% if page_name == "projects" %}class='selected'{% endif %}>Projects</a></li>
+                <li><a href='/gallery' {% if page_name == "gallery" %}class='selected'{% endif %}>Gallery</a></li>
+                <li><a href='/about' {% if page_name == "about" %}class='selected'{% endif %}>About</a></li>
+                <li><a href='/contact' {% if page_name == "contact" %}class='selected'{% endif %}>Contact</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class='main'>
+        <div class='sidebar'>
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div class='content'>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<div class='footer'>
+    {% block footer %}
+    <div id="footer-nav" style="float:right">
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/projects">Projects</a>
+        <a href="/blog">Blog</a>
+    </div>
+    <p>Copyright &copy; {% now "Y" %} Me. All rights reserved.</p>
+    {% endblock %}
+</div>
+</body>
+</html>

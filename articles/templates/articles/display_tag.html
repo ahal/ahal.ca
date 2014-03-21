@@ -1,0 +1,19 @@
+{% extends 'articles/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Articles Tagged' %}: {{ tag.name }}{% endblock %}
+{% block extra-head %}
+{{ block.super }}
+<link rel="alternate" type="application/rss+xml" title="Blog Articles Tagged '{{ tag.name }}' RSS Feed" href="/blog/feeds/tags/{{tag.rss_name}}" />
+{% endblock %}
+
+{% block articles-content %}
+<h2>
+<a href="/blog/feeds/{{ tag.rss_name }}"><img src="/static/img/rss-favicon.png"/></a>
+{% trans 'Articles Tagged' %} <em>{{ tag.name }}</em>{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}
+</h2>
+
+{% for article in page_obj.object_list %}
+{% include 'articles/_articles.html' %}
+{% endfor %}
+{% endblock %}

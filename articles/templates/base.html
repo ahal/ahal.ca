@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% load article_tags %}
+{% block metadata %}
+<link href='/static/css/articles.css' rel='stylesheet' type='text/css'/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="language" content="en-US" />
+<meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
+<meta name="description" content="{% block meta-description %}{% endblock %}" />
+{% block extra-head %}{% endblock %}
+{% endblock metadata %}
+
+{% block title %}Hunting the Shmoo{% endblock %}
+
+{% block content %}
+{% endblock content %}
+
+{% block sidebar %}
+    {% block recent_articles %}
+    <div class="sidediv">
+        <h2>Recent Articles</h2>
+        {% get_articles 10 as recent %}
+        <div class="ellipsis">
+        {% for article in recent %}
+            <a href="{{ article.get_absolute_url }}" title="Read this article">{{ article.title }}</a><br>
+        {% endfor %}
+        <a href="/blog/page/1">All Articles</a>
+        </div>
+    </div>
+    {% endblock recent_articles %}
+
+    {% block archive %}
+    <div class="sidediv">
+        <h2>Archives</h2>
+        {% get_article_archives as archives %}
+        {% for year in archives %}
+            {% for month in year.1 %}
+                <a href="{% url articles_in_month month.year,month.month %}">{{ month|date:"F Y" }}</a>    
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endblock archive %}
+
+    {% block article_tags %}
+    <div class="sidediv">
+        <h2>Tag Cloud</h2>
+        {% tag_cloud %}
+    </div>
+    {% endblock article_tags %}
+{% endblock sidebar %}
