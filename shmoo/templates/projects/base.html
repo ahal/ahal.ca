@@ -8,6 +8,11 @@
 {% endblock metadata %}
 
 {% block content %}
+<div id="blurb">
+<p>
+For more projects see my <a href="https://github.com/ahal?tab=repositories">Github page</a>!
+</p>
+</div>
 <script type='text/javascript'>
 var repos = [
   { name: 'mozconfigwrapper' },
@@ -30,6 +35,8 @@ repos.forEach(function(obj) {
   );
   obj['user'] = 'ahal';
   $("#" + obj['name']).repo(obj);
+  $("#" + obj['name'] + '_split_default')
+    .attr("href", "https://github.com/ahal/" + obj['name']);
 });
 </script>
 {% endblock content %}
