@@ -27,7 +27,7 @@ MARKUP_OPTIONS = getattr(settings, 'ARTICLE_MARKUP_OPTIONS', (
         (MARKUP_REST, _('ReStructured Text')),
         (MARKUP_TEXTILE, _('Textile'))
     ))
-MARKUP_DEFAULT = getattr(settings, 'ARTICLE_MARKUP_DEFAULT', MARKUP_HTML)
+MARKUP_DEFAULT = getattr(settings, 'ARTICLE_MARKUP_DEFAULT', MARKUP_MARKDOWN)
 
 USE_ADDTHIS_BUTTON = getattr(settings, 'USE_ADDTHIS_BUTTON', True)
 ADDTHIS_USE_AUTHOR = getattr(settings, 'ADDTHIS_USE_AUTHOR', True)
