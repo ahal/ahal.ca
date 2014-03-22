@@ -48,9 +48,6 @@ def gallery(request):
 
         for i, img in enumerate(s.find_all('img')):
             img['src'] = '/static/img/gallery/%s/%s.jpg' % (title, i)
-            
-        
-    
     
     return render_to_response('gallery/base.html', {'page_name':'gallery',
                                                     'sets': sets.prettify()})
