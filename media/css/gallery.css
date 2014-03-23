@@ -1,53 +1,60 @@
 .main {
-    min-width: 1190px;
+    min-width: 1167px;
 }
 
-.container .d1 {
-    width: 1180px;
-}
-
-.container .col {
-    float: left;
-    padding: 0;
-    margin: 0px 10px 20px;
+#sets a {
+    color: #fff;
+    text-decoration: none;
 }
 
 #sets .set-header {
-    padding: 12px 15px;
-    margin: 0;
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+    z-index: 1;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+    padding: 20px;
 }
 
 #sets .set-header h2 {
-    float: left;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 0;
     border-bottom: none;
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    line-height: 28px;
+    z-index: 1000;
 }
 
 #sets .set-header p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 20px;
-    float: right;
+    padding-top: 2px;
+    margin: 0px;
+    z-index: 1000;
 }
 
 #sets .set-header p a {
-    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    font-weight: 200;
+}
+
+#sets .set-big {
+    position: relative;
 }
 
 #sets .set-big .hero {
     float: left;
     width: 280px;
     height: 280px;
-    padding: 11px 6px 0px 12px;
+    padding: 5px 6px 0px 5px;
     margin: 0;
 }
 
 #sets .set-big .set-content {
     float: left;
-    width: 880px;
-    padding: 11px 0px 5px;
+    width: 876px;
+    padding: 5px 0px 0px;
     margin: 0;
 }
 
@@ -59,31 +66,47 @@
     margin: 0px 6px 6px 0px;
 }
 
+#sets .filled {
+    padding: 0px;
+    background-color: #D1D1D1;
+    border-radius: 1px;
+    margin: 40px 0px;
+}
+
 #sets .item {
     overflow: hidden !important;
 }
 
 #sets .large {
-    width: 280px;
-    height: 280px;
+    width: 286px !important;
+    height: 280px !important;
+}
+
+#sets .large img {
+    width: 286px;
 }
 
 #sets .link-tile {
     text-align: center;
     font-size: 12px;
     line-height: 14px;
-    border-bottom: none;
+    background: none repeat scroll 0% 0% #6A9B6A;
 }
 
 #sets .link-tile a {
-    underline: none;
+    display: block;
 }
 
 #sets .link-tile strong {
     display: block;
-    font-size: 24px;
-    line-height: 24px;
-    padding: 50px 0px 0px;
+    font-size: 32px;
+    line-height: 140px;
+    padding: 0px;
+}
+
+#sets .link-tile.large strong {
+    font-size: 32px;
+    line-height: 280px;
 }
 
 #sets .clear {
