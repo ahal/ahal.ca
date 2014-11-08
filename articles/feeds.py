@@ -3,6 +3,7 @@ from django.contrib.syndication.views import Feed, FeedDoesNotExist
 from django.contrib.sites.models import Site
 from django.core.cache import cache
 from django.core.urlresolvers import reverse
+from django.template.loader import render_to_string
 from articles.models import Article, Tag
 
 SITE = Site.objects.get_current()
@@ -33,6 +34,9 @@ class LatestEntries(Feed):
 
     def item_pubdate(self, item):
         return item.publish_date
+
+    def item_description(self, item):
+        return render_to_string('feeds/latest_description.html', { 'obj': item })
 
 class TagFeed(Feed):
     def get_object(self, bits, **kwargs):
@@ -76,5 +80,5 @@ class TagFeed(Feed):
         return item.publish_date
 
     def item_description(self, item):
-        return item.description
+        return render_to_string('feeds/tags_description.html', { 'obj': item })
 
