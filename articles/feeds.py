@@ -7,8 +7,7 @@ from articles.models import Article, Tag
 
 SITE = Site.objects.get_current()
 
-# default to 24 hours for feed caching
-FEED_TIMEOUT = getattr(settings, 'ARTICLE_FEED_TIMEOUT', 86400)
+FEED_TIMEOUT = getattr(settings, 'ARTICLE_FEED_TIMEOUT', 0)
 
 class LatestEntries(Feed):
     link = "http://ahal.ca/blog"
