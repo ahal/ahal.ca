@@ -91,7 +91,7 @@ class ArticleAdmin(admin.ModelAdmin):
         form.cleaned_data['tags'] += list(obj.tags.all())
 
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         """Limit the list of articles to article posted by this user unless they're a superuser"""
 
         if request.user.is_superuser:

@@ -36,6 +36,7 @@ class ArticleAdminForm(forms.ModelForm):
         return self.cleaned_data['tags']
 
     class Meta:
+        exclude = ()
         model = Article
 
     class Media:

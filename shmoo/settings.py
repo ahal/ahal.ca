@@ -1,7 +1,6 @@
 # Django settings for shmoo project.
 
 import ConfigParser
-import os
 
 config = ConfigParser.ConfigParser()
 config.read('/home/ahal/.shmoo_config')
@@ -134,9 +133,10 @@ INSTALLED_APPS = (
     # Non default
     'django.contrib.humanize',
     'django.contrib.syndication',
-    'django.contrib.markup',
     'articles',
 )
+
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

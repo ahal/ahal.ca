@@ -1,7 +1,6 @@
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import User
-from django.contrib.markup.templatetags import markup
 from django.contrib.sites.models import Site
 from django.core.cache import cache
 from django.conf import settings
@@ -175,7 +174,7 @@ class Article(models.Model):
     expiration_date = models.DateTimeField(blank=True, null=True, help_text=_('Leave blank if the article does not expire.'))
 
     is_active = models.BooleanField(default=True, blank=True)
-    login_required = models.BooleanField(blank=True, help_text=_('Enable this if users must login before they can read this article.'))
+    login_required = models.BooleanField(default=False, blank=True, help_text=_('Enable this if users must login before they can read this article.'))
 
     use_addthis_button = models.BooleanField(_('Show AddThis button'), blank=True, default=USE_ADDTHIS_BUTTON, help_text=_('Check this to show an AddThis bookmark button when viewing an article.'))
     addthis_use_author = models.BooleanField(_("Use article author's username"), blank=True, default=ADDTHIS_USE_AUTHOR, help_text=_("Check this if you want to use the article author's username for the AddThis button.  Respected only if the username field is left empty."))
