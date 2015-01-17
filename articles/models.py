@@ -92,6 +92,7 @@ class Tag(models.Model):
 
     class Meta:
         ordering = ('name',)
+        app_label = 'articles'
 
 class ArticleStatusManager(models.Manager):
     def default(self):
@@ -112,6 +113,7 @@ class ArticleStatus(models.Model):
     class Meta:
         ordering = ('ordering', 'name')
         verbose_name_plural = _('Article statuses')
+        app_label = 'articles'
 
     def __unicode__(self):
         if self.is_live:
@@ -126,7 +128,7 @@ class ArticleManager(models.Manager):
         expired.
         """
         now = timezone.now()
-        return self.get_query_set().filter(
+        return self.get_queryset().filter(
                 Q(expiration_date__isnull=True) |
                 Q(expiration_date__gte=now),
                 publish_date__lte=now,
@@ -471,6 +473,7 @@ class Article(models.Model):
 
     class Meta:
         ordering = ('-publish_date', 'title')
+        app_label = 'articles'
 
 class Attachment(models.Model):
     upload_to = lambda inst, fn: 'attach/%s/%s/%s' % (timezone.now().year, inst.article.slug, fn)
@@ -481,6 +484,7 @@ class Attachment(models.Model):
 
     class Meta:
         ordering = ('-article', 'id')
+        app_label = 'articles'
 
     def __unicode__(self):
         return u'%s: %s' % (self.article, self.caption)

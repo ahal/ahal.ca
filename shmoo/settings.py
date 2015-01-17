@@ -112,14 +112,6 @@ ROOT_URLCONF = 'shmoo.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'shmoo.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    config.get('template', 'shmoo'),
-    config.get('template', 'articles'),
-)
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,6 +126,14 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     'articles',
     'django_markwhat',
+)
+
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    config.get('template', 'shmoo'),
+    config.get('template', 'articles'),
 )
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
