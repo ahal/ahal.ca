@@ -112,6 +112,11 @@ ROOT_URLCONF = 'shmoo.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'shmoo.wsgi.application'
 
+ALLOWED_HOSTS = [
+    '.ahal.ca',
+    '.ahal.ca.',
+]
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
