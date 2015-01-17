@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'django.contrib.syndication',
     'articles',
-    'django_markwhat',
+    'markdown_deux',
 )
 
 TEMPLATE_DIRS = (

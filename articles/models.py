@@ -1,3 +1,9 @@
+from datetime import datetime
+from base64 import encodestring
+import mimetypes
+import re
+import urllib
+
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import User
@@ -7,11 +13,9 @@ from django.conf import settings
 from django.template.defaultfilters import slugify, striptags
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from datetime import datetime
-from base64 import encodestring
-import mimetypes
-import re
-import urllib
+
+from markdown2 import markdown
+
 
 WORD_LIMIT = getattr(settings, 'ARTICLES_TEASER_LIMIT', 75)
 AUTO_TAG = getattr(settings, 'ARTICLES_AUTO_TAG', False)
@@ -234,11 +238,11 @@ class Article(models.Model):
 
         original = self.rendered_content
         if self.markup == MARKUP_MARKDOWN:
-            self.rendered_content = markup.markdown(self.content)
+            self.rendered_content = markdown(self.content, extras=['fenced-code-blocks'])
         elif self.markup == MARKUP_REST:
-            self.rendered_content = markup.restructuredtext(self.content)
+            self.rendered_content = restructuredtext(self.content)
         elif self.markup == MARKUP_TEXTILE:
-            self.rendered_content = markup.textile(self.content)
+            self.rendered_content = textile(self.content)
         else:
             self.rendered_content = self.content
 
