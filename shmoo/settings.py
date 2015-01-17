@@ -128,12 +128,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    # 'django.contrib.admindocs',
     
     # Non default
     'django.contrib.humanize',
     'django.contrib.syndication',
     'articles',
+    'django_markwhat',
 )
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'

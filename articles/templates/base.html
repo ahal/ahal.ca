@@ -34,7 +34,7 @@
         {% get_article_archives as archives %}
         {% for year in archives %}
             {% for month in year.1 %}
-                <a href="{% url articles_in_month month.year,month.month %}">{{ month|date:"F Y" }}</a>    
+                <a href="{% url "articles_in_month" month.year month.month %}">{{ month|date:"F Y" }}</a>
             {% endfor %}
         {% endfor %}
     </div>

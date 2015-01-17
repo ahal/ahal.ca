@@ -3,7 +3,7 @@
     <li>
         <div class="quiet" style="float:right">
             {% trans 'Posted on' %} {{ article.publish_date|date:"F jS, Y" }}
-            {% trans 'by' %} <a href="{% url articles_by_author article.author.username %}" title="{% trans 'View articles posted by' %} {{ article.author.get_name }}">{{ article.author.get_name }}</a>
+            {% trans 'by' %} <a href="{% url 'articles_by_author' article.author.username %}" title="{% trans 'View articles posted by' %} {{ article.author.get_name }}">{{ article.author.get_name }}</a>
         </div>
         <h4><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></h4>
     </li>

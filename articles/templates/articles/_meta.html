@@ -2,7 +2,7 @@
 
 <div id="article-meta">
     {% trans 'Published' %}: {{ article.publish_date|naturalday }}<br>
-    {% trans 'Author' %}: <a href="{% url articles_by_author article.author.username %}" title="{% trans 'Read other articles by this author' %}">{{ article.author.get_name }}</a><br>
+    {% trans 'Author' %}: <a href="{% url 'articles_by_author' article.author.username %}" title="{% trans 'Read other articles by this author' %}">{{ article.author.get_name }}</a><br>
     <a href="/blog/feeds/latest.rss"><img src="/static/img/rss-favicon.png"/></a>
     <p>
     {% if article.get_previous_article %}
