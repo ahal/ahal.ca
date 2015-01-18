@@ -230,7 +230,7 @@ class GetPageURLNode(template.Node):
 
         try:
             # determine what view we are using based upon the path of this page
-            view, args, kwargs = resolve(context['request'].path)
+            view, args, kwargs = resolve(context.request.path)
         except (Resolver404, KeyError):
             raise ValueError('Invalid pagination page.')
         else:

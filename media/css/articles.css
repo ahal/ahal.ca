@@ -36,3 +36,8 @@ div .sidediv {
     padding: 0 0 0 0;
     margin-top: 0px
 }
+
+.pagination-pages li {
+    display: inline-block;
+    list-style-type: none;
+}
