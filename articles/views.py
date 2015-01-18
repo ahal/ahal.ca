@@ -9,7 +9,7 @@ from django.template import RequestContext
 from articles.models import Article, Tag
 from datetime import datetime
 
-ARTICLE_PAGINATION = getattr(settings, 'ARTICLE_PAGINATION', 20)
+ARTICLE_PAGINATION = getattr(settings, 'ARTICLE_PAGINATION', 50)
 
 def display_blog_page(request, tag=None, username=None, year=None, month=None, page=1):
     """
