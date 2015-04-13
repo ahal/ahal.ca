@@ -5,7 +5,7 @@ import ConfigParser
 config = ConfigParser.ConfigParser()
 config.read('/home/ahal/.shmoo_config')
 
-DEBUG = config.getboolean('general', 'debug') 
+DEBUG = config.getboolean('general', 'debug')
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -16,12 +16,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': config.get('database', 'engine'), # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': config.get('database', 'name'),     # Or path to database file if using sqlite3.
-        'USER': config.get('database', 'user'),     # Not used with sqlite3.
-        'PASSWORD': config.get('database', 'password'), # Not used with sqlite3.
-        'HOST': 'localhost',                        # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                                 # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': config.get('database', 'engine'),  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': config.get('database', 'name'),      # Or path to database file if using sqlite3.
+        'USER': config.get('database', 'user'),      # Not used with sqlite3.
+        'PASSWORD': config.get('database', 'password'),  # Not used with sqlite3.
+        'HOST': 'localhost',                         # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                                  # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -64,7 +64,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = config.get('staticfiles', 'root') 
+STATIC_ROOT = config.get('staticfiles', 'root')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -84,7 +84,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -94,7 +94,7 @@ SECRET_KEY = 'g-mvud_oxy2e(o(@6#1035jwhs-s8+1=ohv&amp;sy8^p))4lnn5=l'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -125,7 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    
+
     # Non default
     'django.contrib.humanize',
     'django.contrib.syndication',
@@ -164,6 +164,12 @@ LOGGING = {
         }
     },
     'loggers': {
+        # Silence SuspiciousOperation.DisallowedHost exception
+        # ('Invalid HTTP_HOST' header messages).
+        'django.security.DisallowedHost': {
+            'handlers': ['null'],
+            'propagate': False,
+        },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
