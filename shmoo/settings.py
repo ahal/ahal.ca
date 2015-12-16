@@ -167,7 +167,7 @@ LOGGING = {
         # Silence SuspiciousOperation.DisallowedHost exception
         # ('Invalid HTTP_HOST' header messages).
         'django.security.DisallowedHost': {
-            'handlers': ['null'],
+            'handlers': [],
             'propagate': False,
         },
         'django.request': {
