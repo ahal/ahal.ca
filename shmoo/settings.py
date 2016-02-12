@@ -1,6 +1,7 @@
 # Django settings for shmoo project.
-
 import ConfigParser
+import sys
+sys.path.insert(0, '/home/ahal/www/ahal.ca')
 
 config = ConfigParser.ConfigParser()
 config.read('/home/ahal/.shmoo_config')
@@ -9,19 +10,19 @@ DEBUG = config.getboolean('general', 'debug')
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Andrew Halberstadt', 'halbersa@gmail.com'),
+    (config.get('admin', 'name'), config.get('admin', 'email')),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': config.get('database', 'engine'),  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': config.get('database', 'name'),      # Or path to database file if using sqlite3.
-        'USER': config.get('database', 'user'),      # Not used with sqlite3.
-        'PASSWORD': config.get('database', 'password'),  # Not used with sqlite3.
-        'HOST': 'localhost',                         # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                                  # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.%s' % config.get('database', 'engine'),
+        'NAME': config.get('database', 'name'),
+        'USER': config.get('database', 'user'),
+        'PASSWORD': config.get('database', 'password'),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -88,7 +89,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'g-mvud_oxy2e(o(@6#1035jwhs-s8+1=ohv&amp;sy8^p))4lnn5=l'
+SECRET_KEY = config.get('general', 'secret_key')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -118,10 +119,10 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = (
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',

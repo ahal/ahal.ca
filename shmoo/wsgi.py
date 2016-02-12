@@ -16,7 +16,7 @@ framework.
 import os
 import sys
 
-sys.path.append("/home/ahal/public/ahal.ca")
+sys.path.append("/home/ahal/www/ahal.ca")
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shmoo.settings")
 
