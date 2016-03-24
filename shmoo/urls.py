@@ -10,6 +10,5 @@ urlpatterns = patterns('',
     (r'^gallery/$', 'shmoo.views.gallery'),
     (r'^projects/$', 'shmoo.views.projects'),
     (r'^n/$', 'shmoo.views.can'),
-    (r'^so-long-and-thanks-for-all-the-fish/$', 'shmoo.views.fish'),
     url(r'^admin/', include(admin.site.urls)),
 )

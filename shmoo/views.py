@@ -78,6 +78,3 @@ def contact(request):
 
 def can(request):
     return HttpResponse("Yes he can!")
-
-def fish(request):
-    return render_to_response('fish.html')
