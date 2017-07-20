@@ -139,7 +139,7 @@ choosing experience was, I created a demo. In this scenario, pretend I want to s
 opt mochitest-chrome tasks:
 
 <video width="100%" height="100%" controls>
-<source src="https://people.mozilla.org/~ahalberstadt/demo/try-fzf.mp4" type="video/mp4">
+<source src="/static/vid/blog/2016/try-fzf.mp4" type="video/mp4">
 </video>
 
 Now instead of printing the task labels to `stdout`, imagine if this theoretical try chooser stuffed

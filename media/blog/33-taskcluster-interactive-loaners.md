@@ -14,7 +14,7 @@ I'm pleased to announce there is now a third option, which is easy, powerful and
 Rather than trying to explain it in words, here is a ~5 minute demo:
 
 <video width="100%" height="100%" controls>
-<source src="https://people.mozilla.org/~ahalberstadt/demo/taskcluster-interactive-loaner.mp4" type="video/mp4">
+<source src="/static/vid/blog/2016/taskcluster-interactive-loaner.mp4" type="video/mp4">
 </video>
 
 Because I'm too lazy to re-record, I want to clarify that when I said |mach reftest| was "identical"
